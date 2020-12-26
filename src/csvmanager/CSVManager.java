@@ -194,11 +194,15 @@ public class CSVManager extends javax.swing.JFrame {
     }//GEN-LAST:event_file2ActionPerformed
 
     private void file1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_file1ActionPerformed
+        try{
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.showOpenDialog(null);
         String filename = fileChooser.getSelectedFile().getAbsolutePath();
         System.out.println("file name is: "+ filename);
         System.out.println("about to pass it to Reader");
+        }catch(NullPointerException npe){
+            System.err.println("An NPE occured");
+        }
     }//GEN-LAST:event_file1ActionPerformed
 
     /**
